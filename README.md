@@ -7,9 +7,7 @@
 - Model : mediapipe, LSTM
  
 ## Data
-- pinkpong1
-  핑크퐁 [머리 어깨 무릎 짝] (2:59) 
-  https://www.youtube.com/watch?v=VwzJOCHNH54
+- pinkpong1: https://www.youtube.com/watch?v=VwzJOCHNH54
 - 추가 예정
  
 ## Process
