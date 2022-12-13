@@ -11,4 +11,4 @@
 - 추가 예정
  
 ## Process
-- sample data extract : pinkpong1 영상 내에서 1초 동안(3~4초) frame capture를 진행하여 이미지 파일과 골격 데이터를 csv로 저장 (fps 30으로 설정)
+- sample data extract : pinkpong1 영상 내에서 1초 동안(3~4초) frame capture를 진행하여 이미지 파일을 출력하고 골격 데이터를 csv로 저장 (fps 30으로 설정)
