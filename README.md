@@ -7,7 +7,7 @@
 - Model : mediapipe, LSTM
  
 ## Data
-- pinkpong1: https://www.youtube.com/watch?v=VwzJOCHNH54
+- pinkpong1.mp4: https://www.youtube.com/watch?v=VwzJOCHNH54
 - 추가 예정
  
 ## Process
