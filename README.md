@@ -6,7 +6,7 @@
 - 개발 팀원 : 송소정, 전희진, 오유경
 - 기간 : 2022/12/08 - 2023/01/?
 - 발표 : 2023/01/?
-- Model : mediapipe, LSTM
+- Model : mediapipe, fastdtw
  
 ## Data
 - pinkpong1.mp4 : https://www.youtube.com/watch?v=VwzJOCHNH54
