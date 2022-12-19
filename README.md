@@ -9,7 +9,12 @@
  
 ## Data
 - pinkpong1.mp4 : https://www.youtube.com/watch?v=VwzJOCHNH54
+- dtw_sample_train.mp4 : pinkpong1.mp4 수정본1
+- dtw_sample_test.mp4 : pinkpong1.mp4 수정본2
 - 추가 예정
  
 ## Process
 - sample data extract : pinkpong1 영상 내에서 1초 동안(3~4초) frame capture를 진행하여 이미지 파일을 출력하고 골격 데이터를 csv로 저장 (fps 30으로 설정)
+- dtw using sample data : dtw_sample_train 과 dtw_sample_test 영상에서 skeleton 추출을 하여 csv로 저장 
+                          12개의 각도 변수를 만들어서 fastdtw로 시계열 유사도 비교
+                          시계열 유사도의 평균 값을 출력하여 score를 판단
