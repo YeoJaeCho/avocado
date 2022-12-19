@@ -15,4 +15,4 @@
  
 ## Process
 - sample data extract : pinkpong1 영상 내에서 1초 동안(3~4초) frame capture를 진행하여 이미지 파일을 출력하고 골격 데이터를 csv로 저장 (fps 30으로 설정)
-- dtw using sample data : dtw_sample_train 과 dtw_sample_test 영상에서 skeleton 추출을 하여 csv로 저장하고, 12개의 각도 변수를 만들어서 fastdtw로 시계열 유사도를 구하여 평균 값으로 score를 판단
+- dtw using sample data : dtw_sample_train 과 dtw_sample_test 영상에서 skeleton 추출을 하여 csv로 저장하고, 12개의 각도 변수를 만들어서 fastdtw로 시계열 유사도를 구한 후 그 평균 값으로 score를 판단
