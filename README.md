@@ -12,6 +12,8 @@
 - pinkpong1.mp4 : https://www.youtube.com/watch?v=VwzJOCHNH54
 - dtw_sample_train.mp4 : pinkpong1.mp4 수정본1
 - dtw_sample_test.mp4 : pinkpong1.mp4 수정본2
+- clap_clap.mp4 : pinkpong1.mp4 수정본3 -> error data로 사용
+- foot_stamp_clap.mp4 : pinkpong1.mp4 수정본4 -> error data로 사용
 - 추가 예정
  
 ## Process
