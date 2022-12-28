@@ -14,6 +14,8 @@
 - dtw_sample_test.mp4 : pinkpong1.mp4 수정본2
 - clap_clap.mp4 : pinkpong1.mp4 수정본3 -> error data로 사용
 - foot_stamp_clap.mp4 : pinkpong1.mp4 수정본4 -> error data로 사용
+- verse1.mp4 : pinkpong1.mp4 수정본5
+- verse2.mp4 : pinkpong1.mp4 수정본6
 - 추가 예정
  
 ## Process
@@ -23,3 +25,4 @@
  1. 12개의 각도 변수를 만들어서 fastdtw로 시계열 유사도를 구한 후 그 평균 값으로 score를 판단
  2. x, y 좌표를 flatten 해서 fastdtw로 시계열 유사도를 구한 후 그 평균 값으로 score를 판단
 - cosine similarity using sample data : train과 test data 간의 코사인 유사도를 구하고 error data와 train data 간의 코사인 유사도 구하기 (코사인 유사도 값이 너무 높게 나와서 수정 필요함)
+- dtw using longer sample data: 이전에 1초짜리 영상들 비교를 넘어서 긴 영상들 사이의 비교를 위해 보다 긴 verse1, verse2 data를 이용해서 dtw 구하기
