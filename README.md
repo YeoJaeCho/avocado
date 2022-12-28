@@ -19,10 +19,15 @@
 - 추가 예정
  
 ## Process
-- sample data extract : pinkpong1 영상 내에서 1초 동안(3~4초) frame capture를 진행하여 이미지 파일을 출력하고 골격 데이터를 csv로 저장 (fps 30으로 설정)
+- sample data extract : 
+ 0. pinkpong1 영상 내에서 1초 동안(3~4초) frame capture를 진행하여 이미지 파일을 출력하고 
+ 1. 골격 데이터를 csv로 저장 (fps 30으로 설정)
 - dtw using sample data :
- dtw_sample_train 과 dtw_sample_test 영상에서 skeleton 추출을 하여 csv로 저장하고,
+ 0. dtw_sample_train 과 dtw_sample_test 영상에서 skeleton 추출을 하여 csv로 저장
  1. 12개의 각도 변수를 만들어서 fastdtw로 시계열 유사도를 구한 후 그 평균 값으로 score를 판단
  2. x, y 좌표를 flatten 해서 fastdtw로 시계열 유사도를 구한 후 그 평균 값으로 score를 판단
-- cosine similarity using sample data : train과 test data 간의 코사인 유사도를 구하고 error data와 train data 간의 코사인 유사도 구하기 (코사인 유사도 값이 너무 높게 나와서 수정 필요함)
-- dtw using longer sample data: 이전에 1초짜리 영상들 비교를 넘어서 긴 영상들 사이의 비교를 위해 보다 긴 verse1, verse2 data를 이용해서 dtw 구하기
+- cosine similarity using sample data : 
+ 1. train과 test data 간의 코사인 유사도를 구하고 
+ 2. error data와 train data 간의 코사인 유사도 구하기 (코사인 유사도 값이 너무 높게 나와서 수정 필요함)
+- dtw using longer sample data: 
+ 1. 이전에 1초짜리 영상들 비교를 넘어서 긴 영상들 사이의 비교를 위해 보다 긴 verse1, verse2 data를 이용해서 dtw 구하기
