@@ -54,8 +54,14 @@
  ![v2_skeleton_information](https://user-images.githubusercontent.com/109574182/211456698-d79636fd-3f8c-4117-a618-16391783a932.jpg)
  0. data : head.mp4, shoulder.mp4, knee.mp4, clap.mp4, left_foot.mp4, right_foot.mp4, both_foot.mp4, yeah.mp4
  1. create_data : 영상 내의 각 프레임을 불러와서 mediapipe를 이용하여 그림에 표시된 벡터를 구하고 벡터 간의 각도를 구한 data를 생성
- 2. model : 생성한 data를 가지고 LSTM model에 학습
+ 2. model : 생성한 data를 가지고 LSTM model에 학습 (epoch = 15)
  3. test_model : 영상을 넣어서 pose estimation이 잘 되는지 확인해보고, 직접 캠을 연결해서도 확인
  4. v2_model.h5 : 성능이 90%가 넘었고, 완벽하지는 않지만 대부분의 동작들이 모두 인식됨
- 5. 단점 : both_foot의 경우 가만히 서있는 것과 유사한 skeleton이기 때문에 가만히 서있을 때 both_foot이라고 인식
- 
+ 5. 개선해야 하는 부분 : both_foot의 경우 가만히 서있는 것과 유사한 skeleton이기 때문에 가만히 서있을 때 both_foot이라고 인식
+ - LSTM model version3 :
+ 0. data : LSTM model version2와 동일
+ 1. model : epoch을 200으로 증가시켜서 LSTM model에 학습
+ 2. test_model : 영상에 적용시켰을 때에는 잘 인식이 되는 편은 아니지만, 직접 캠을 연결해서 실행해보았을 때는 어느정도 인식이 잘 되는 편
+ 3. v3_model.h5 : 성능이 99%가 넘었고, 전에 비해 pose estimation 정확도가 높아짐
+ 4. 개선해야 하는 부분 : version2와 마찬가지로 both_foot으로 계속 인식이 되는 상황, clap 또한 인식이 잘 되지 않음
+ 5. clap, shoulder는 꽤 정확도가 높게 인식 됨
