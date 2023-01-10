@@ -49,13 +49,13 @@
  1. create_data : 영상 내의 각 프레임을 불러와서 mediapipe를 이용하여 그림에 표시된 벡터를 구하고 벡터 간의 각도를 구한 data를 생성
  2. model : 생성한 data를 가지고 LSTM model에 학습
  3. test_model : 영상을 넣어서 pose estimation이 잘 되는지 확인해보고, 직접 캠을 연결해서도 확인
- 4. 모델 성능이 12% 정도 밖에 되지 않음, pose estimation이 잘 되지 않음
+ 4. v1_model.h5 : 성능이 12% 정도 밖에 되지 않음, pose estimation이 잘 되지 않음
  - LSTM model version2 :
  ![v2_skeleton_information](https://user-images.githubusercontent.com/109574182/211456698-d79636fd-3f8c-4117-a618-16391783a932.jpg)
  0. data : head.mp4, shoulder.mp4, knee.mp4, clap.mp4, left_foot.mp4, right_foot.mp4, both_foot.mp4, yeah.mp4
  1. create_data : 영상 내의 각 프레임을 불러와서 mediapipe를 이용하여 그림에 표시된 벡터를 구하고 벡터 간의 각도를 구한 data를 생성
  2. model : 생성한 data를 가지고 LSTM model에 학습
  3. test_model : 영상을 넣어서 pose estimation이 잘 되는지 확인해보고, 직접 캠을 연결해서도 확인
- 4. 모델 성능이 90%가 넘었고, 완벽하지는 않지만 대부분의 동작들이 모두 인식됨
- 5. both_foot의 경우 가만히 서있는 것과 유사한 skeleton이기 때문에 가만히 서있을 때 both_foot이라고 인식한다는 단점이 존재
+ 4. v2_model.h5 : 성능이 90%가 넘었고, 완벽하지는 않지만 대부분의 동작들이 모두 인식됨
+ 5. 단점 : both_foot의 경우 가만히 서있는 것과 유사한 skeleton이기 때문에 가만히 서있을 때 both_foot이라고 인식
  
