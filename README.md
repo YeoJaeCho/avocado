@@ -69,6 +69,13 @@
  3. cosine similarity, fastdtw, euclidean distance of cosine similarity로 점수 계산
  4. 벡터로 변환하지 않고 계산했을 때에 비해 성능이 좋아짐 (틀린 동작에 대해 낮은 점수를 추출)
  
+ - change vector selection :
+ 0. data : verse3.mp4, mjbj.mp4
+ 1. LSTM model version2의 그림에 표시된 벡터를 이용
+ 2. 나머지는 vector preprocessing 과정과 동일
+ 3. 다른 동작일 때 점수를 더 낮게 도출시킨다는 장점이 있지만 같은 동작일 때도 점수가 낮아지므로 성능 향상이라고 볼 수는 없음
+ 4. 하지만 LSTM model에서는 큰 성능 향상을 보였기 때문에 최종 모델은 더 많은 vector를 이용한 모델로 결정
+ 
  - LSTM model version1 :
  ![v1_skeleton_information](https://user-images.githubusercontent.com/109574182/211456133-044905fd-415d-4de4-9870-4c19f648aadd.jpg)
  0. data : head.mp4, shoulder.mp4, knee.mp4, clap.mp4, left_foot.mp4, right_foot.mp4, both_foot.mp4, yeah.mp4
@@ -93,3 +100,14 @@
  3. v3_model.h5 : 성능이 99%가 넘었고, 전에 비해 pose estimation 정확도가 높아짐
  4. 개선해야 하는 부분 : version2와 마찬가지로 both_foot으로 계속 인식이 되는 상황, clap 또한 인식이 잘 되지 않음
  5. clap, shoulder는 꽤 정확도가 높게 인식 됨
+ 
+ ## Final Model
+ - Model : euclidean distance of cosine similarity
+ - 선정 이유 : 
+ 1. LSTM model에서 성능 개선을 보였지만 정확한 pose estimation을 구현해내는 것이 아니기 때문에 사용하지 않기로 결정
+ 2. cosine similarity, fastdtw, euclidean distance of cosine similarity 중 가장 성능이 좋다고 판단이 된 euclidean distance of cosine similarity를 사용
+ - 세부 사항 :
+ 1. skeleton에서 vector를 추출 후 eigen vector로 normalization
+ 2. bounding box와 perspective transform으로 preprocessing
+ 3. 두 개의 비교할 데이터를 이용해 cosine similarity 값을 추출 후 euclidean distance 값 도출
+ 4. euclidean distance 값을 점수화시킴
