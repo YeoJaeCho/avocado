@@ -17,7 +17,8 @@
  4. foot_stamp_clap.mp4 : pinkpong1.mp4 수정본4 -> error data로 사용
  5. verse1.mp4 : pinkpong1.mp4 수정본5
  6. verse2.mp4 : pinkpong1.mp4 수정본6
- 7. knee_clap2.mp4 : pinkpong1.mp4 수정본7 -> error data로 사용
+ 7. verse3.mp4 : pinkpong1.mp4 수정본7 -> error data로 사용
+ 8. knee_clap2.mp4 : pinkpong1.mp4 수정본8 -> error data로 사용
  
 - head.mp4 : https://youtu.be/pd6qiaR0640
 - shoulder.mp4 : https://youtu.be/LEgXDugKw1M
@@ -27,8 +28,7 @@
 - right_foot.mp4 : https://youtu.be/qGZuYcRJoqs
 - both_foot.mp4 : https://youtu.be/8QuVoz8fg2g
 - yeah.mp4 : https://youtu.be/DOMnnqTTXjI
-- mjbj.mp4 : 
-- 추가 예정
+- mjbj.mp4 : https://www.youtube.com/watch?v=GXSmnCTR_-k
  
 ## Process
 - sample data extract : 
@@ -63,7 +63,11 @@
  2. wrong data를 적용했을 때 전에 비해 점수가 낮아졌지만 (성능이 소폭 상승) 보완이 필요함
  
  - vector preprocessing : 
- 0. data : 
+ 0. data : verse3.mp4, mjbj.mp4
+ 1. LSTM model version1의 그림에 표시된 벡터를 이용
+ 2. bounding box와 perspective transform으로 전처리
+ 3. cosine similarity, fastdtw, euclidean distance of cosine similarity로 점수 계산
+ 4. 벡터로 변환하지 않고 계산했을 때에 비해 성능이 좋아짐 (틀린 동작에 대해 낮은 점수를 추출)
  
  - LSTM model version1 :
  ![v1_skeleton_information](https://user-images.githubusercontent.com/109574182/211456133-044905fd-415d-4de4-9870-4c19f648aadd.jpg)
