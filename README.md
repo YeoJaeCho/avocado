@@ -17,6 +17,8 @@
  4. foot_stamp_clap.mp4 : pinkpong1.mp4 수정본4 -> error data로 사용
  5. verse1.mp4 : pinkpong1.mp4 수정본5
  6. verse2.mp4 : pinkpong1.mp4 수정본6
+ 7. knee_clap2.mp4 : pinkpong1.mp4 수정본7 -> error data로 사용
+ 
 - head.mp4 : https://youtu.be/pd6qiaR0640
 - shoulder.mp4 : https://youtu.be/LEgXDugKw1M
 - knee.mp4 : https://youtu.be/pLNstNjTarc
@@ -41,17 +43,23 @@
 - cosine similarity using sample data : 
  0. data : dtw_sample_train.mp4, dtw_sample_test.mp4, clap_clap.mp4, foot_stamp_clap.mp4
  1. train과 test data 간의 코사인 유사도를 구하고 error data와 train data 간의 코사인 유사도 구하기 
- 2. 문제점 : 영상 내에서 하체의 움직임에 비해 상체의 움직임이 많아서 상체의 율동이 틀리더라도 하체의 움직임이 없다면 코사인 유사도가 높게 나옴
+ 2. 영상 내에서 하체의 움직임에 비해 상체의 움직임이 많아서 상체의 율동이 틀리더라도 하체의 움직임이 없다면 코사인 유사도가 높게 나옴
  
-- cosine similarity (seperate upper and lower body) :
+- dtw using longer sample data: 
+ 0. data : verse1.mp4, verse2.mp4
+ 1. 이전에 1초짜리 영상들 비교를 넘어서 긴 영상들 사이의 비교를 위해 위의 영상을 이용하여 dtw 구하기
+ 2. 긴 영상도 짧은 영상과 마찬가지로 코사인 유사도가 높게 나옴
+ 
+ - cosine similarity (seperate upper and lower body) :
  0. data : dtw_sample_train.mp4, dtw_sample_test.mp4
  1. 상하체를 나눠서 코사인 유사도에 적용
  2. 상하체를 나눠서 적용했음에도 불구하고 코사인 유사도가 높게 나오는 결과가 나옴
  3. 정확도를 높이기 위해서는 data preprocessing이 필요함
  
-- dtw using longer sample data: 
- 0. data : verse1.mp4, verse2.mp4
- 1. 이전에 1초짜리 영상들 비교를 넘어서 긴 영상들 사이의 비교를 위해 위의 영상을 이용하여 dtw 구하기
+ - bounding box & perspective transform : 
+ 0. data : dtw_sample_train.mp4, dtw_sample_test.mp4, knee_clap2.mp4
+ 1. preprocessing을 위해서 bounding box와 perspective transform 진행
+ 2. wrong data를 적용했을 때 전에 비해 점수가 낮아졌지만 (성능이 소폭 상승) 보완이 필요함
  
  - LSTM model version1 :
  ![v1_skeleton_information](https://user-images.githubusercontent.com/109574182/211456133-044905fd-415d-4de4-9870-4c19f648aadd.jpg)
