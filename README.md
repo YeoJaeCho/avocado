@@ -31,18 +31,28 @@
 - sample data extract : 
  0. data : pinkpong1.mp4
  1. 1초 동안(3~4초) frame capture를 진행하여 이미지 파일을 출력하고 골격 데이터를 csv로 저장 (fps 30으로 설정)
+ 
 - dtw using sample data :
  0. data : dtw_sample_train.mp4, dtw_sample_test.mp4
  1. skeleton 추출을 하여 csv로 저장
  2. 12개의 각도 변수를 만들어서 fastdtw로 시계열 유사도를 구한 후 그 평균 값으로 score를 판단
  3. x, y 좌표를 flatten 해서 fastdtw로 시계열 유사도를 구한 후 그 평균 값으로 score를 판단
+ 
 - cosine similarity using sample data : 
- 0. data : dtw_sample_train.mp4, dtw_sample_test.mp4
+ 0. data : dtw_sample_train.mp4, dtw_sample_test.mp4, clap_clap.mp4, foot_stamp_clap.mp4
  1. train과 test data 간의 코사인 유사도를 구하고 error data와 train data 간의 코사인 유사도 구하기 
- 2. 코사인 유사도 값이 너무 높게 나와서 수정 필요함
+ 2. 문제점 : 영상 내에서 하체의 움직임에 비해 상체의 움직임이 많아서 상체의 율동이 틀리더라도 하체의 움직임이 없다면 코사인 유사도가 높게 나옴
+ 
+- cosine similarity (seperate upper and lower body) :
+ 0. data : dtw_sample_train.mp4, dtw_sample_test.mp4
+ 1. 상하체를 나눠서 코사인 유사도에 적용
+ 2. 상하체를 나눠서 적용했음에도 불구하고 코사인 유사도가 높게 나오는 결과가 나옴
+ 3. 정확도를 높이기 위해서는 data preprocessing이 필요함
+ 
 - dtw using longer sample data: 
  0. data : verse1.mp4, verse2.mp4
  1. 이전에 1초짜리 영상들 비교를 넘어서 긴 영상들 사이의 비교를 위해 위의 영상을 이용하여 dtw 구하기
+ 
  - LSTM model version1 :
  ![v1_skeleton_information](https://user-images.githubusercontent.com/109574182/211456133-044905fd-415d-4de4-9870-4c19f648aadd.jpg)
  0. data : head.mp4, shoulder.mp4, knee.mp4, clap.mp4, left_foot.mp4, right_foot.mp4, both_foot.mp4, yeah.mp4
@@ -50,6 +60,7 @@
  2. model : 생성한 data를 가지고 LSTM model에 학습
  3. test_model : 영상을 넣어서 pose estimation이 잘 되는지 확인해보고, 직접 캠을 연결해서도 확인
  4. v1_model.h5 : 성능이 12% 정도 밖에 되지 않음, pose estimation이 잘 되지 않음
+ 
  - LSTM model version2 :
  ![v2_skeleton_information](https://user-images.githubusercontent.com/109574182/211456698-d79636fd-3f8c-4117-a618-16391783a932.jpg)
  0. data : head.mp4, shoulder.mp4, knee.mp4, clap.mp4, left_foot.mp4, right_foot.mp4, both_foot.mp4, yeah.mp4
@@ -58,6 +69,7 @@
  3. test_model : 영상을 넣어서 pose estimation이 잘 되는지 확인해보고, 직접 캠을 연결해서도 확인
  4. v2_model.h5 : 성능이 90%가 넘었고, 완벽하지는 않지만 대부분의 동작들이 모두 인식됨
  5. 개선해야 하는 부분 : both_foot의 경우 가만히 서있는 것과 유사한 skeleton이기 때문에 가만히 서있을 때 both_foot이라고 인식
+ 
  - LSTM model version3 :
  0. data : LSTM model version2와 동일
  1. model : epoch을 200으로 증가시켜서 LSTM model에 학습
