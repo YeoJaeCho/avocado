@@ -27,6 +27,7 @@
 - right_foot.mp4 : https://youtu.be/qGZuYcRJoqs
 - both_foot.mp4 : https://youtu.be/8QuVoz8fg2g
 - yeah.mp4 : https://youtu.be/DOMnnqTTXjI
+- mjbj.mp4 : 
 - 추가 예정
  
 ## Process
@@ -60,6 +61,9 @@
  0. data : dtw_sample_train.mp4, dtw_sample_test.mp4, knee_clap2.mp4
  1. preprocessing을 위해서 bounding box와 perspective transform 진행
  2. wrong data를 적용했을 때 전에 비해 점수가 낮아졌지만 (성능이 소폭 상승) 보완이 필요함
+ 
+ - vector preprocessing : 
+ 0. data : 
  
  - LSTM model version1 :
  ![v1_skeleton_information](https://user-images.githubusercontent.com/109574182/211456133-044905fd-415d-4de4-9870-4c19f648aadd.jpg)
