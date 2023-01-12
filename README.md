@@ -7,7 +7,7 @@
 - 기획 팀원 : 최창수
 - 기간 : 2022/12/08 - 2023/01/18
 - 발표 : 2023/01/19
-- Model : mediapipe, cosine similarity, fastdtw, LSTM
+- Model : mediapipe, cosine similarity, fastdtw, euclidean distance of cosine similarity, LSTM
  
 ## Data
 - pinkpong1.mp4 : https://www.youtube.com/watch?v=VwzJOCHNH54
