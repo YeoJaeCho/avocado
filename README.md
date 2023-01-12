@@ -111,3 +111,12 @@
  2. bounding box와 perspective transform으로 preprocessing
  3. 두 개의 비교할 데이터를 이용해 cosine similarity 값을 추출 후 euclidean distance 값 도출
  4. euclidean distance 값을 점수화시킴
+
+## Final Model Process
+ - extract csv from video lists : 
+ 0. data : (final)baby.mp4, (final)bottom.mp4, (final)goodmorning.mp4, (final)growup.mp4, (final)jungle_dance.mp4, (final)monster.mp4, (final)octopus.mp4, (final)pinkpong.mp4, (final)poo.mp4, (final)volcano.mp4
+ 1. 사용할 율동 영상으로부터 skeleton을 추출하여 csv로 저장
+
+- extract vector data from video lists : 
+0. data : extract csv from video lists와 동일
+1. 사용할 율동 영상으로부터 skeleton을 추출하여 bounding box, perspective transform 처리 후 vector로 변환하여 numpy 파일로 저장
