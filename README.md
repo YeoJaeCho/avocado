@@ -118,5 +118,23 @@
  1. 사용할 율동 영상으로부터 skeleton을 추출하여 csv로 저장
 
 - extract vector data from video lists : 
-0. data : extract csv from video lists와 동일
-1. 사용할 율동 영상으로부터 skeleton을 추출하여 bounding box, perspective transform 처리 후 vector로 변환하여 numpy 파일로 저장
+ 0. data : extract csv from video lists와 동일
+ 1. 사용할 율동 영상으로부터 skeleton을 추출하여 bounding box, perspective transform 처리 후 vector로 변환하여 numpy 파일로 저장
+
+- extract csv from cam lists :
+ 0. data : extract csv from video lists의 video를 따라서 춤을 춘 cam 영상들 (각 video 당 5개씩)
+ 1. cam 영상들로부터 skeleton을 추출하여 csv로 저장
+ 
+- extract vector from cam csv lists :
+ 0. data : extract csv from cam lists에서 추출한 csv 파일들
+ 1. csv 파일에서 가져온 data로 bounding box, perspective transform 처리 후 vector로 변환하여 numpy 파일로 저장
+ 
+- score of correct data :
+ 0. data : extract vector data from video lists의 결과물, extract vector from cam csv lists의 결과물
+ 1. 원본 영상에서 추출한 numpy와 따라서 춤을 춘 cam 영상에서 추출한 numpy를 이용해서 euclidean distance of cosine similarity 값 추출
+ 2. 올바르게 춤을 췄을 때 60 ~ 80 점 사이의 score가 나옴
+ 
+- score of error data : 
+ 0. data : score of correct data와 동일
+ 1. 원본 영상에서 추출한 numpy와 다른 춤을 따라 춘 cam 영상에서 추출한 numpy를 이용해서 euclidean distance of cosine similarity 값 추출
+ 2. 다른 춤을 췄을 때 대부분 60점 이하의 score가 나옴 
