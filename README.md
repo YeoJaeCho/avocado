@@ -7,6 +7,7 @@
 - 기획 팀원 : 최창수
 - 기간 : 2022/12/08 - 2023/01/18
 - 발표 : 2023/01/19
+- 발표자 : 조여재, 송소정
 - 발표 자료 : https://www.miricanvas.com/v/11pm22c
 - Model : mediapipe, cosine similarity, fastdtw, euclidean distance of cosine similarity, LSTM
  
