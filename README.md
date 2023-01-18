@@ -138,3 +138,10 @@
  0. data : score of correct data와 동일
  1. 원본 영상에서 추출한 numpy와 다른 춤을 따라 춘 cam 영상에서 추출한 numpy를 이용해서 euclidean distance of cosine similarity 값 추출
  2. 다른 춤을 췄을 때 대부분 60점 이하의 score가 나옴 
+ 
+- final score code to communicate with unity :
+ 0. 최종 score : 최저점 30점, 최고점 100점
+ 1. euclidean distance of cosine similarity가 75 이상의 값이 나오면 최종 score를 100점으로 간주
+ 2. 40 이하의 값이 나오면 최종 score를 30점으로 간주
+ 3. 40 ~ 65 사이의 값이 나오면 가중치를 0.8로 두어 정답과 오답의 점수 차이를 구분시킴
+ 4. unity에서 분석을 요청하면 python에서 최종 score를 내서 다시 unity로 넘겨주는 과정을 진행
