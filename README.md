@@ -2,12 +2,10 @@
 - 동작 인식 기반 어린이 율동 프로그램
 
 ## Project
-- 분석 팀원 : 조여재, 엄대용
-- 개발 팀원 : 송소정, 오유경
-- 기획 팀원 : 최창수
+- 팀원 : 조여재, 엄대용, 오유경
 - 기간 : 2022/12/08 - 2023/01/18
 - 발표 : 2023/01/19
-- 발표자 : 조여재, 송소정
+- 발표자 : 조여재
 - 발표 자료 : https://www.miricanvas.com/v/11pm22c
 - 시연 영상 : https://youtu.be/ykKZ23KaDHA
 - Model : mediapipe, cosine similarity, fastdtw, euclidean distance of cosine similarity, LSTM
