@@ -11,7 +11,7 @@
 - 발표 자료 : https://www.miricanvas.com/v/11pm22c
 - Model : mediapipe, cosine similarity, fastdtw, euclidean distance of cosine similarity, LSTM
  
-## Data
+## Practice Data
 - pinkpong1.mp4 : https://www.youtube.com/watch?v=VwzJOCHNH54
  1. dtw_sample_train.mp4 : pinkpong1.mp4 수정본1
  2. dtw_sample_test.mp4 : pinkpong1.mp4 수정본2
@@ -32,7 +32,7 @@
 - yeah.mp4 : https://youtu.be/DOMnnqTTXjI
 - mjbj.mp4 : https://www.youtube.com/watch?v=GXSmnCTR_-k
  
-## Process
+## Practice Process
 - sample data extract : 
  0. data : pinkpong1.mp4
  1. 1초 동안(3~4초) frame capture를 진행하여 이미지 파일을 출력하고 골격 데이터를 csv로 저장 (fps 30으로 설정)
@@ -113,6 +113,18 @@
  2. bounding box와 perspective transform으로 preprocessing
  3. 두 개의 비교할 데이터를 이용해 cosine similarity 값을 추출 후 euclidean distance 값 도출
  4. euclidean distance 값을 점수화시킴
+ 
+## Final Data
+- baby.mp4 : 
+- bottom.mp4 :
+- goodmorning.mp4 :
+- growup.mp4 :
+- jungle_dance.mp4 :
+- monster.mp4 :
+- octopus.mp4 : 
+- pinkpong.mp4 : 
+- poo.mp4 : 
+- volcano.mp4
 
 ## Final Model Process
  - extract csv from video lists : 
