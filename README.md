@@ -2,13 +2,14 @@
 - 동작 인식 기반 어린이 율동 프로그램
 
 ## Project
-- 분석 팀원 : 조여재, 엄대용, 최창수(sub)
+- 분석 팀원 : 조여재, 엄대용
 - 개발 팀원 : 송소정, 오유경
 - 기획 팀원 : 최창수
 - 기간 : 2022/12/08 - 2023/01/18
 - 발표 : 2023/01/19
 - 발표자 : 조여재, 송소정
 - 발표 자료 : https://www.miricanvas.com/v/11pm22c
+- 시연 영상 : https://youtu.be/ykKZ23KaDHA
 - Model : mediapipe, cosine similarity, fastdtw, euclidean distance of cosine similarity, LSTM
  
 ## Practice Data
@@ -115,20 +116,20 @@
  4. euclidean distance 값을 점수화시킴
  
 ## Final Data
-- baby.mp4 : 
-- bottom.mp4 :
-- goodmorning.mp4 :
-- growup.mp4 :
-- jungle_dance.mp4 :
-- monster.mp4 :
-- octopus.mp4 : 
-- pinkpong.mp4 : 
-- poo.mp4 : 
-- volcano.mp4
+- baby.mp4 : https://www.youtube.com/watch?v=v2G5WTzW06o 수정본
+- bottom.mp4 : https://www.youtube.com/watch?v=ac8t6v_4l0A 수정본
+- goodmorning.mp4 : https://www.youtube.com/watch?v=RwhocKu3mbE 수정본
+- growup.mp4 : https://www.youtube.com/watch?v=l5s6h3gwNBY&t=267s 수정본
+- jungle_dance.mp4 : https://www.youtube.com/watch?v=eZcLuB75lbs&t=124s 수정본
+- monster.mp4 : https://www.youtube.com/watch?v=CBRr4m7mm-w 수정본
+- octopus.mp4 : https://www.youtube.com/watch?v=4zg93b_aanc 수정본
+- pinkpong.mp4 : https://www.youtube.com/watch?v=VwzJOCHNH54&t=58s 수정본
+- poo.mp4 : https://www.youtube.com/watch?v=oj-ZWXBzXBQ 수정본
+- volcano.mp4 : https://www.youtube.com/watch?v=1WAQLe0cW1M 수정본
 
 ## Final Model Process
  - extract csv from video lists : 
- 0. data : (final)baby.mp4, (final)bottom.mp4, (final)goodmorning.mp4, (final)growup.mp4, (final)jungle_dance.mp4, (final)monster.mp4, (final)octopus.mp4, (final)pinkpong.mp4, (final)poo.mp4, (final)volcano.mp4
+ 0. data : baby.mp4, bottom.mp4, goodmorning.mp4, growup.mp4, jungle_dance.mp4, monster.mp4, octopus.mp4, pinkpong.mp4, poo.mp4, volcano.mp4
  1. 사용할 율동 영상으로부터 skeleton을 추출하여 csv로 저장
 
 - extract vector data from video lists : 
@@ -146,12 +147,12 @@
 - score of correct data :
  0. data : extract vector data from video lists의 결과물, extract vector from cam csv lists의 결과물
  1. 원본 영상에서 추출한 numpy와 따라서 춤을 춘 cam 영상에서 추출한 numpy를 이용해서 euclidean distance of cosine similarity 값 추출
- 2. 올바르게 춤을 췄을 때 60 ~ 80 점 사이의 score가 나옴
+ 2. 올바르게 춤을 췄을 때 60 ~ 80 사이의 score가 나옴
  
 - score of error data : 
  0. data : score of correct data와 동일
  1. 원본 영상에서 추출한 numpy와 다른 춤을 따라 춘 cam 영상에서 추출한 numpy를 이용해서 euclidean distance of cosine similarity 값 추출
- 2. 다른 춤을 췄을 때 대부분 60점 이하의 score가 나옴 
+ 2. 다른 춤을 췄을 때 대부분 60 이하의 score가 나옴 
  
 - final score code to communicate with unity :
  0. 최종 score : 최저점 30점, 최고점 100점
